@@ -6,6 +6,35 @@ namespace myTiles {
     export const tile5 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
     export const tile21 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile1 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile2 = image.ofBuffer(hex``);
+
+    helpers._registerFactory("tilemap", function(name: string) {
+        switch(helpers.stringTrim(name)) {
+            case "lazer":
+            case "level1":return tiles.createTilemap(hex`1000100001010101010101010101010000000000010101010101010101010100000000000101010101010101010101000000000001010101010101010101010000000000010101010101010101010100000000000101010101010101010101000000000001010101010101010101010000000000010101010101010101010100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`, img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, [myTiles.transparency16,sprites.dungeon.darkGroundCenter], TileScale.Sixteen);
+        }
+        return null;
+    })
 
     helpers._registerFactory("tile", function(name: string) {
         switch(helpers.stringTrim(name)) {
@@ -14,6 +43,10 @@ namespace myTiles {
             case "tile5":return tile5;
             case "bounce":
             case "tile21":return tile21;
+            case "myTile":
+            case "tile1":return tile1;
+            case "myTile0":
+            case "tile2":return tile2;
         }
         return null;
     })
