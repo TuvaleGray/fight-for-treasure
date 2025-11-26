@@ -632,7 +632,7 @@ let badlazer: Sprite = null
 let enemy_monkey: Sprite = null
 let person: Sprite = null
 scene.cameraFollowSprite(person)
-tiles.setCurrentTilemap(tilemap`lazer`)
+tiles.setCurrentTilemap(tilemap`level2`)
 person = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
