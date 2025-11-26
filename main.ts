@@ -315,11 +315,6 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     true
     )
 })
-info.onScore(60, function () {
-    sprites.destroy(enemy1GAMEBEGINS, effects.fire, 10000)
-    game.splash("You won!")
-    game.gameOver(true)
-})
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.a, function (sprite, otherSprite) {
     info.changeScoreBy(2)
     music.play(music.createSoundEffect(WaveShape.Noise, 1422, 0, 192, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
@@ -547,6 +542,11 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.enemyb, function (sprite, ot
 })
 info.onLifeZero(function () {
     game.gameOver(false)
+})
+info.onScore(50, function () {
+    sprites.destroy(enemy1GAMEBEGINS, effects.fire, 10000)
+    game.splash("You won!")
+    game.gameOver(true)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.food1, function (sprite, otherSprite) {
     sprites.destroy(chest2)
