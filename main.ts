@@ -102,7 +102,7 @@ function random () {
             2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
             2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
             `, SpriteKind.projectilefromblueenemypleasework)
-        tiles.placeOnRandomTile(badlazer, sprites.dungeon.darkGroundCenter)
+        tiles.placeOnRandomTile(badlazer, assets.tile`transparency16`)
     }
 }
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -631,8 +631,8 @@ let projectile: Sprite = null
 let badlazer: Sprite = null
 let enemy_monkey: Sprite = null
 let person: Sprite = null
-tiles.setCurrentTilemap(tilemap`level1`)
 scene.cameraFollowSprite(person)
+tiles.setCurrentTilemap(tilemap`level1`)
 person = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
